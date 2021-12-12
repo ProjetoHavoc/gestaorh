@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Ola {{ usuario.funcionario.nome }}
+    </div>
+    <div class="col">
+      <a href="{% url 'logout' %}">Logout</a>
+
+      {% if usuario.funcionario.empresa %}
+          <a href="">Editar empresa</a>
+      {% else %}
+          <a href="">Criar empresa</a>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
